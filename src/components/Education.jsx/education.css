@@ -1,0 +1,107 @@
+.info__container{
+    grid-template-columns: 9fr 3fr;
+    column-gap: 1.875rem;
+}
+
+.timeline{
+    background-color: var(--container-color);
+    padding: 1.875rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.timeline::before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid var(--container-color);
+    position: absolute;
+    right: -0.93rem;
+    top: 20%;
+}
+
+.timeline__item{
+    position: relative;
+    padding-left: 3.125rem;
+    padding-bottom: 1rem;
+}
+
+.timeline_item:last-child{
+    padding-bottom: 0;
+}
+
+.timeline__item::before{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--first-color);
+    position: absolute;
+    left: 0.25rem;
+    top: 0;
+}
+
+.timeline .icon-graduation{
+    position: absolute;
+    left: -0.4375rem;
+    top: 0;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    background-color: var(--container-color);
+    padding: 0.4375rem 0;
+}
+
+.timeline__date{
+    color: #8b88b1;
+    font-size: var(--smaller-font-size);
+}
+
+.timeline__title{
+    font-size: var(--h3-font-size);
+    margin: 0;
+}
+
+.right__side{
+    justify-items: end;
+}
+
+@media screen and (max-width: 1024px){
+    .info__container{
+        grid-template-columns: 720px;
+        justify-content:center ;
+        row-gap: 1.875rem;
+        
+    }
+
+    .timeline::before{
+        border-left: 10px solid transparent ;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+        left : 49%;
+        top: -20px;
+    }
+
+    .info__container>.right__side{
+        justify-self: center;
+        grid-row: 1;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .info__container{
+        grid-template-columns: 350px;
+    }
+
+    .timeline::before{
+        left: 47%;
+    }
+}
+
+@media screen and (max-width : 380px){
+    .info__container{
+        grid-template-columns: 1fr;
+    }
+}
